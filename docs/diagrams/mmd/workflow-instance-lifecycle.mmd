@@ -1,0 +1,13 @@
+stateDiagram-v2
+    [*] --> Draft
+    Draft --> Running : launch instance
+    Draft --> Cancelled
+    Running --> Paused : pause
+    Paused --> Running : resume
+    Paused --> Cancelled
+    Running --> Completed
+    Running --> Failed
+    Running --> Cancelled
+    Completed --> [*]
+    Failed --> [*]
+    Cancelled --> [*]

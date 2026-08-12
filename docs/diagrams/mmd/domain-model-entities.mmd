@@ -1,0 +1,53 @@
+erDiagram
+    WorkflowDefinition ||--o{ Node : contains
+    WorkflowDefinition ||--o{ Connection : contains
+    Node ||--o{ Connection : "source/target"
+    WorkflowDefinition ||--o{ WorkflowInstance : "instantiated as"
+    WorkflowInstance ||--o{ NodeExecution : "records"
+    Node ||--o{ NodeExecution : "executed as"
+    Node }o--|| TaskHandlerReference : "Task node targets"
+
+    WorkflowDefinition {
+        string definitionId
+        string name
+        int version
+        string description
+        string status
+        string createdBy
+        datetime createdAt
+    }
+    Node {
+        string nodeId
+        string type
+        string name
+        string description
+        string configuration
+    }
+    Connection {
+        string id
+        string sourceNodeId
+        string targetNodeId
+        string conditionExpression
+    }
+    WorkflowInstance {
+        string instanceId
+        string workflowDefinitionId
+        int definitionVersion
+        string status
+        datetime startTime
+        datetime endTime
+    }
+    NodeExecution {
+        string eventId
+        string nodeId
+        string state
+        datetime startedAt
+        datetime completedAt
+        string result
+        string evaluationOutcome
+    }
+    TaskHandlerReference {
+        string handlerType
+        string configuration
+        string externalMetadata
+    }

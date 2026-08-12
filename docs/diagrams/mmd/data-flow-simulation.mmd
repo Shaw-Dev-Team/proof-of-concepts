@@ -1,0 +1,27 @@
+sequenceDiagram
+    actor Designer as Workflow Designer
+    participant UI as Angular SPA
+    participant API as Workflow API
+    participant Engine as Runtime Engine
+    participant Handler as Task Handler (mock)
+    participant DB as SQL Server
+
+    Designer->>UI: Build workflow graph
+    UI->>API: POST /definitions
+    API->>DB: Save WorkflowDefinition (versioned)
+    Designer->>UI: Launch simulation
+    UI->>API: POST /instances
+    API->>Engine: Start WorkflowInstance
+    Engine->>DB: Create instance + initial NodeExecution
+    loop Until End node
+        Engine->>Engine: Evaluate current node(s)
+        alt Task node
+            Engine->>Handler: InvokeAsync(context, callback)
+            Handler-->>Engine: NotifyCompletedAsync(result)
+        end
+        Engine->>DB: Record NodeExecution / advance state
+    end
+    UI->>API: GET /instances/{id}
+    API->>DB: Read instance + history
+    API-->>UI: Instance state + execution history
+    UI-->>Designer: Render graph with node status

@@ -1,0 +1,10 @@
+stateDiagram-v2
+    [*] --> Pending
+    Pending --> Ready
+    Ready --> Running
+    Running --> Completed
+    Running --> Failed
+    Ready --> Skipped
+    Completed --> [*]
+    Failed --> [*]
+    Skipped --> [*]

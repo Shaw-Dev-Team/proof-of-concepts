@@ -1,0 +1,19 @@
+graph TB
+    subgraph Client["Browser"]
+        UI["Angular SPA<br/>Persona Select / Workflow Designer / Runtime Viewer / Dashboard"]
+    end
+
+    subgraph Server["Workflow Platform Backend"]
+        API["ASP.NET Core Web API"]
+        Engine["Workflow Runtime Engine"]
+        Handlers["Task Handler Layer<br/>ITaskHandler implementations (mocked)"]
+    end
+
+    DB[("SQL Server 2022")]
+
+    UI -->|HTTPS REST| API
+    API --> Engine
+    Engine --> Handlers
+    Handlers -->|completion callback| Engine
+    API --> DB
+    Engine --> DB
