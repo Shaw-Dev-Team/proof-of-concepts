@@ -8,9 +8,9 @@
 
 ## Identity
 
-- Name: <TODO>
-- Owner: <TODO>
-- Type: <TODO> (currently a proof-of-concepts / docs-only workspace — no detected build, test, or source project)
+- Name: Workflow Visualization and Execution Platform (POC)
+- Owner: Muhammed Ali Khan
+- Type: Full-stack web application — Angular (latest) + Angular Material frontend, ASP.NET Core (.NET 10 LTS) Web API backend, SQL Server 2022.
 
 ---
 
@@ -38,7 +38,7 @@
 - source-code-directory: `./`
 - revision-file: `./REVISION.md`
 - changelog-file: `./CHANGELOG.md`
-- audit-command: `<TODO — no stack detected yet; set this once a project/build system is added, e.g. npm audit / pip-audit / cargo audit>`
+- audit-command: `npm audit` (run from `src/frontend`), `dotnet list package --vulnerable --include-transitive` (run from `src/backend`)
 - test-runbook-location: `./docs/testing/<FEATURE-ID>-<short-name>.md`
 - architecture-doc: `./docs/architecture.md`
 - test-cases-doc: `./docs/test-cases.md`

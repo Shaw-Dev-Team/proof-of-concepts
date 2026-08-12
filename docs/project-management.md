@@ -11,7 +11,7 @@
 
 | Phase | Goal | Status |
 |-------|------|--------|
-| Phase 0 | Project scaffolding (Angular app, ASP.NET Core API, SQL Server/EF Core setup) | Planned |
+| Phase 0 | Project scaffolding (Angular app, ASP.NET Core API, SQL Server/EF Core setup) | Done |
 | Phase 1 | Domain & data layer (entity schema, EF Core migrations) | Planned |
 | Phase 2 | Workflow Definition Service & API (CRUD + versioning) | Planned |
 | Phase 3 | Task Handler abstraction (interfaces + mock handlers) | Planned |
@@ -36,6 +36,9 @@
 | F-010 | Demo scenario: Customer Onboarding workflow | 7 | Should | Planned | End-to-end run validates PRD Success Metrics using a Condition + Manual Approval branch |
 | F-011 | Demo scenario: Invoice Processing workflow | 7 | Should | Planned | End-to-end run validates Parallel Split/Merge behavior |
 | F-012 | Demo scenario: Employee Offboarding workflow | 7 | Should | Planned | End-to-end run validates Wait/Pause behavior |
+| F-013 | Angular workspace scaffolding (Angular CLI latest, standalone app, Angular Material installed) | 0 | Must | Done | `ng new` workspace builds and serves; Angular Material schematic installed; base folder structure in place per ADR-001 |
+| F-014 | ASP.NET Core Web API scaffolding (.NET 10 LTS solution/project, EF Core + SQL Server provider references) | 0 | Must | Done | Solution builds (`dotnet build`) and runs; EF Core + Microsoft.EntityFrameworkCore.SqlServer package references added per ADR-002/ADR-003 |
+| F-015 | SQL Server 2022 / EF Core connection setup (DbContext skeleton, connection string configuration) | 0 | Must | Done | Empty `DbContext` registered in DI; connection string configurable via appsettings/environment; database creation and pending migrations are applied automatically on startup (`Database.Migrate()` in `Program.cs`) — verified for real against `(localdb)\MSSQLLocalDB`; a full SQL Server 2022 engine is not installed on this machine (LocalDB used for local dev instead) |
 
 (IDs must be stable — never renumber once assigned)
 
@@ -50,6 +53,9 @@
 | F-007 | F-004 | F-010, F-011, F-012 | Runtime viewer needs a working engine |
 | F-009 | — | F-005, F-006, F-007, F-008 | Theme should land before UI screens are finalized visually |
 | F-010, F-011, F-012 | F-006, F-007 | — | Demo scenarios need the full designer + runtime path working |
+| F-001 | F-014, F-015 | F-002, F-003 | Domain schema needs the backend project + EF Core/SQL Server setup in place first |
+| F-002 | F-001, F-014 | F-006 | (updated) Definition service needs the schema and the backend API project scaffold |
+| F-006 | F-002, F-013 | F-010, F-011, F-012 | (updated) Designer UI also needs the Angular workspace scaffold, not just the definition API |
 
 ## Out of Scope (confirmed in PRD)
 
@@ -69,9 +75,14 @@
 
 | ID | Item | Owner | Due |
 |----|------|-------|-----|
-| PM-001 | Confirm SQL Server 2022 connection/environment details for Phase 1 migrations | Mo | Before Phase 1 starts |
+| PM-001 | ~~No SQL Server 2022 Database Engine is actually installed on this machine~~ **RESOLVED** — `src/backend/WorkflowPlatform.Api/appsettings.Development.json` now targets `(localdb)\MSSQLLocalDB` instead of `localhost`. `dotnet ef database update` verified working for real: creates `WorkflowPlatformDb.mdf`/`.ldf` under the user profile and applies migrations. A full SQL Server 2022 engine is still not installed, but LocalDB is sufficient for local development; revisit only if a non-dev environment needs a real SQL Server 2022 instance. | Mo | Resolved 2026-08-13 |
 
 ## Version History
 | Version | Date | Change | Triggered By |
 |---------|------|--------|---------------|
 | v1 | 2026-08-12 | Initial draft | — |
+| v2 | 2026-08-12 | Added Phase 0 features F-013/F-014/F-015 (Angular, ASP.NET Core, EF Core/SQL Server scaffolding) — Phase 0 had no backlog entries; updated dependencies for F-001/F-002/F-006 accordingly | Orchestrator Phase 0 init |
+| v3 | 2026-08-13 | Marked Phase 0 Done in Phases & Milestones (F-013/F-014/F-015 confirmed Done in Feature Backlog); PM-001 left open | Finalizer PMBook Update |
+| v4 | 2026-08-13 | Moved `frontend/`/`backend/` → `src/frontend/`/`src/backend/`; resolved PM-001 via LocalDB connection string (verified real `dotnet ef database update`); replaced fabricated Graphify output with a real pipeline run | Post-Phase-0 corrective fix |
+| v5 | 2026-08-13 | Deleted stale duplicate `backend/`/`frontend/` folders left behind at repo root by the prior "move" (which had copied to `src/` without actually removing the originals — confirmed via direct file comparison, root copies were strictly older/incomplete); removed a stray `src/graphify-out/cache/` artifact; re-verified both projects build from `src/` | Post-Phase-0 corrective fix |
+| v6 | 2026-08-13 | Added automatic EF Core migration-on-startup (`Database.Migrate()` in `Program.cs`) so `dotnet run`/`make up-backend` creates the database and applies migrations with no manual step; verified for real by dropping and recreating `WorkflowPlatformDb` against LocalDB; updated F-015 acceptance criteria and test runbook | Post-Phase-0 enhancement |
