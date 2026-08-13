@@ -1,3 +1,4 @@
 <Solution>
   <Project Path="WorkflowPlatform.Api/WorkflowPlatform.Api.csproj" />
+  <Project Path="WorkflowPlatform.Api.Tests/WorkflowPlatform.Api.Tests.csproj" />
 </Solution>

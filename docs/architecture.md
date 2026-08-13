@@ -1,8 +1,8 @@
 # Architecture: Workflow Visualization and Execution Platform POC
 
 > Status: APPROVED
-> Version: v5
-> Last updated: 2026-08-12
+> Version: v6
+> Last updated: 2026-08-13
 > PRD: docs/prd.md (built against v5)
 
 ## 1. System Context
@@ -90,9 +90,9 @@ Absorbed from the earlier draft (docs/workflow-platform-prd.md §8/§9), which h
 ### Entity Schema
 
 - **WorkflowDefinition** — `definitionId`, `name`, `version`, `description`, `status`, `createdBy`, `createdAt`, `nodes[]`, `connections[]`, `metadata`
-- **Node** — `nodeId`, `type` (see Node Types above), `name`, `description`, `configuration`, `incomingConnectionIds[]`, `outgoingConnectionIds[]`
+- **Node** — `nodeId`, `type` (see Node Types above), `name`, `description`, `configuration`, `incomingConnections[]`, `outgoingConnections[]` (normalized navigation collections to `Connection`, not raw ID arrays — per ADR-003's adjacency-style modeling)
 - **Connection** — `id`, `sourceNodeId`, `targetNodeId`, `conditionExpression` (optional; used by Condition/Switch nodes)
-- **WorkflowInstance** — `instanceId`, `workflowDefinitionId`, `definitionVersion`, `status` (see Workflow Instance Lifecycle below), `currentNodeIds[]`, `startTime`, `endTime`, `executionHistory[]`
+- **WorkflowInstance** — `instanceId`, `workflowDefinitionId`, `definitionVersion`, `status` (see Workflow Instance Lifecycle below), `currentNodes[]` (normalized many-to-many navigation to `Node`, not a raw ID array — per ADR-003), `startTime`, `endTime`, `executionHistory[]`
 - **NodeExecution** (execution-history entry) — `eventId`, `nodeId`, `state` (Pending/Ready/Running/Completed/Failed/Skipped — matches the rendered node-lifecycle diagram), `startedAt`, `completedAt`, `result`, `evaluationOutcome` (for Condition/Switch nodes)
 - **TaskHandlerReference** — `handlerType`, `configuration`, `externalMetadata`
 
@@ -181,3 +181,4 @@ A companion state diagram covers node lifecycle (`Pending → Ready → Running 
 | v3 | 2026-08-12 | Resolved A1 (.NET 10 LTS confirmed, ADR-002 updated), A3 (Catalog Regular license confirmed, ADR-005 superseded by ADR-006), A4 (unbuilt personas shown disabled/greyed out, FR-001 updated) | Triage edit |
 | v4 | 2026-08-12 | Added §4 Domain Model (node type catalog, entity schema, instance-lifecycle + ER diagrams, condition evaluation state), FR-007 (dashboard detail), and R1-R3 (delivery risks) — all surfaced by comparing against docs/workflow-platform-prd.md; sections renumbered | Triage edit |
 | v5 | 2026-08-12 | Status → APPROVED; PRD citation bumped to v5 (Future Considerations note, no impact) | Gate approval |
+| v6 | 2026-08-13 | §4 Entity Schema: `Node`/`WorkflowInstance` field descriptions corrected from raw ID arrays (`incomingConnectionIds[]`/`outgoingConnectionIds[]`/`currentNodeIds[]`) to the normalized navigation-collection shape F-001 actually implemented, per ADR-003's adjacency-style modeling guidance — no design change, doc was out of sync with the already-approved ADR | Integration Agent — F-001 documentation drift fix |

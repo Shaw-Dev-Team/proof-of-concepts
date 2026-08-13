@@ -1,0 +1,172 @@
+{
+  "backend/WorkflowPlatform.Api.Tests/EnumTests.cs": {
+    "mtime": 1786578742.6724708,
+    "ast_hash": "0e884590d34c117d98b2d3552a2d080e",
+    "semantic_hash": ""
+  },
+  "backend/WorkflowPlatform.Api.Tests/NodeConnectionTests.cs": {
+    "mtime": 1786578737.9556367,
+    "ast_hash": "f3db55943069d2ca08b2f73a3b6c872e",
+    "semantic_hash": ""
+  },
+  "backend/WorkflowPlatform.Api.Tests/TestDbContextFactory.cs": {
+    "mtime": 1786578631.053322,
+    "ast_hash": "4613c1bc304e9e9120502e363b34375c",
+    "semantic_hash": ""
+  },
+  "backend/WorkflowPlatform.Api.Tests/WorkflowDefinitionTests.cs": {
+    "mtime": 1786578656.9854126,
+    "ast_hash": "c5215400f3e7ed89df0a51bb3c060f66",
+    "semantic_hash": ""
+  },
+  "backend/WorkflowPlatform.Api.Tests/WorkflowInstanceExecutionTests.cs": {
+    "mtime": 1786578729.4436202,
+    "ast_hash": "991b8760a7b4f9d04d41b280bce89159",
+    "semantic_hash": ""
+  },
+  "backend/WorkflowPlatform.Api.Tests/WorkflowPlatform.Api.Tests.csproj": {
+    "mtime": 1786578377.48719,
+    "ast_hash": "d1220926466908ded306c74fd5e5c73a",
+    "semantic_hash": ""
+  },
+  "backend/WorkflowPlatform.Api/Data/WorkflowPlatformDbContext.cs": {
+    "mtime": 1786578164.7931123,
+    "ast_hash": "3410c09bf58a1f7486cd4ef44200fdaa",
+    "semantic_hash": ""
+  },
+  "backend/WorkflowPlatform.Api/Domain/Connection.cs": {
+    "mtime": 1786578149.6306937,
+    "ast_hash": "0fca9cac41abda896107b8aa6754a2ff",
+    "semantic_hash": ""
+  },
+  "backend/WorkflowPlatform.Api/Domain/Node.cs": {
+    "mtime": 1786578149.604578,
+    "ast_hash": "3a038787ecb91dc6a300d56a23f111bb",
+    "semantic_hash": ""
+  },
+  "backend/WorkflowPlatform.Api/Domain/NodeExecution.cs": {
+    "mtime": 1786578149.719932,
+    "ast_hash": "b34f22a6203533e37459a791439e6276",
+    "semantic_hash": ""
+  },
+  "backend/WorkflowPlatform.Api/Domain/NodeExecutionState.cs": {
+    "mtime": 1786578126.6717343,
+    "ast_hash": "4bcc6126141af3da890f2b0788a534fe",
+    "semantic_hash": ""
+  },
+  "backend/WorkflowPlatform.Api/Domain/NodeType.cs": {
+    "mtime": 1786578126.6305244,
+    "ast_hash": "db17b186c8e244daf5a1f8f270f06401",
+    "semantic_hash": ""
+  },
+  "backend/WorkflowPlatform.Api/Domain/TaskHandlerReference.cs": {
+    "mtime": 1786578149.7350702,
+    "ast_hash": "2726e6ebc0e24b64c4401a9712def7ab",
+    "semantic_hash": ""
+  },
+  "backend/WorkflowPlatform.Api/Domain/WorkflowDefinition.cs": {
+    "mtime": 1786578149.5271394,
+    "ast_hash": "b7b77311c8872d3fff8f017dff756bcf",
+    "semantic_hash": ""
+  },
+  "backend/WorkflowPlatform.Api/Domain/WorkflowInstance.cs": {
+    "mtime": 1786578149.6597762,
+    "ast_hash": "03a128534248bb0d61fea8607415d757",
+    "semantic_hash": ""
+  },
+  "backend/WorkflowPlatform.Api/Domain/WorkflowInstanceStatus.cs": {
+    "mtime": 1786578126.6933622,
+    "ast_hash": "8fa033d00b1a085bfa7379b5ac330f1b",
+    "semantic_hash": ""
+  },
+  "backend/WorkflowPlatform.Api/Migrations/20260812234443_InitialSchema.Designer.cs": {
+    "mtime": 1786578283.7813296,
+    "ast_hash": "aef370c4de31fd940802f42d41761a36",
+    "semantic_hash": ""
+  },
+  "backend/WorkflowPlatform.Api/Migrations/20260812234443_InitialSchema.cs": {
+    "mtime": 1786578283.7793293,
+    "ast_hash": "03b391f3e12bb69eb299718fe75d9d5b",
+    "semantic_hash": ""
+  },
+  "backend/WorkflowPlatform.Api/Migrations/WorkflowPlatformDbContextModelSnapshot.cs": {
+    "mtime": 1786578283.7825496,
+    "ast_hash": "ddd249d116a26c181eba656e22c1a8a8",
+    "semantic_hash": ""
+  },
+  "backend/WorkflowPlatform.Api/Program.cs": {
+    "mtime": 1786577327.0113614,
+    "ast_hash": "83f9f1e0e1dd6389183acc7b69303d04",
+    "semantic_hash": ""
+  },
+  "backend/WorkflowPlatform.Api/Properties/launchSettings.json": {
+    "mtime": 1786522336.7471697,
+    "ast_hash": "c52f31624575c58c6f817661263536ab",
+    "semantic_hash": ""
+  },
+  "backend/WorkflowPlatform.Api/WorkflowPlatform.Api.csproj": {
+    "mtime": 1786573968.527366,
+    "ast_hash": "459002a52967894511cfd99611695ae8",
+    "semantic_hash": ""
+  },
+  "backend/WorkflowPlatform.slnx": {
+    "mtime": 1786578382.2804308,
+    "ast_hash": "a8359f592a52cfb7c445a1e071881169",
+    "semantic_hash": ""
+  },
+  "frontend/angular.json": {
+    "mtime": 1786521994.2930512,
+    "ast_hash": "e6ffee421f671894eb0e566e3ad65081",
+    "semantic_hash": ""
+  },
+  "frontend/eslint.config.js": {
+    "mtime": 1786521921.6087115,
+    "ast_hash": "fc9af192c9f6ba178804915c26d2f4c9",
+    "semantic_hash": ""
+  },
+  "frontend/package.json": {
+    "mtime": 1786521921.6147132,
+    "ast_hash": "e873a88775f024d66593c40fded3084d",
+    "semantic_hash": ""
+  },
+  "frontend/src/app/app.config.ts": {
+    "mtime": 1786522102.0698023,
+    "ast_hash": "9b48547660ffa7f837d87d84476ea406",
+    "semantic_hash": ""
+  },
+  "frontend/src/app/app.routes.ts": {
+    "mtime": 1786522102.103057,
+    "ast_hash": "9e82134f3e41732656270447c4c872fe",
+    "semantic_hash": ""
+  },
+  "frontend/src/app/app.spec.ts": {
+    "mtime": 1786522102.1182232,
+    "ast_hash": "ede5d78ff900885fd81da5624d3b8926",
+    "semantic_hash": ""
+  },
+  "frontend/src/app/app.ts": {
+    "mtime": 1786522102.1239204,
+    "ast_hash": "d26f7fb88a92bd5b7f6cbcc40811b452",
+    "semantic_hash": ""
+  },
+  "frontend/src/main.ts": {
+    "mtime": 1786522102.1337543,
+    "ast_hash": "f3983daa46dc263bf3c8d0dd448a5a01",
+    "semantic_hash": ""
+  },
+  "frontend/README.md": {
+    "mtime": 1786522102.0373633,
+    "ast_hash": "b89888b1db99e2d04436415804cacc2f",
+    "semantic_hash": ""
+  },
+  "frontend/src/app/app.html": {
+    "mtime": 1786522102.098051,
+    "ast_hash": "0e69297bc9d6f81a443e15d94dca748f",
+    "semantic_hash": ""
+  },
+  "frontend/src/index.html": {
+    "mtime": 1786521998.4381313,
+    "ast_hash": "31ca54c4ffd8c6d4d0c0e1aadf9f91d1",
+    "semantic_hash": ""
+  }
+}

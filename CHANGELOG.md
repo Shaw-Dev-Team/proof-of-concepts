@@ -7,6 +7,49 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.0] - 2026-08-13
+
+### Added
+
+#### F-001 — Domain/Data Schema + EF Core Migrations
+- Defined core domain entities: `WorkflowDefinition`, `WorkflowNode`, `NodeConnection`, `WorkflowInstance`, `NodeExecution`
+- Created enums: `WorkflowNodeType`, `NodeExecutionStatus`, `WorkflowInstanceStatus`
+- Implemented versioned workflow definitions with immutable snapshots on instance creation
+- Generated `InitialSchema` migration replacing the placeholder `InitialEmpty` migration
+- Added comprehensive data constraints: uniqueness on `(Name, Version)` pairs, foreign key integrity, cascade delete rules
+- Created unit test project `WorkflowPlatform.Api.Tests` with 13 passing tests
+
+**Modules/Files Affected:**
+- `src/backend/WorkflowPlatform.Api/Domain/` — 6 new entity classes:
+  - `WorkflowDefinition.cs` — workflow template with versioning
+  - `WorkflowNode.cs` — individual node with metadata
+  - `NodeConnection.cs` — explicit edges between nodes
+  - `WorkflowInstance.cs` — runtime instance bound to a specific definition version
+  - `NodeExecution.cs` — per-node execution tracking
+  - Plus 3 enum files: `WorkflowNodeType.cs`, `NodeExecutionStatus.cs`, `WorkflowInstanceStatus.cs`
+- `src/backend/WorkflowPlatform.Api/Data/WorkflowPlatformDbContext.cs` — modified to register entities and configure relationships
+- `src/backend/WorkflowPlatform.Api/Migrations/` — new `InitialSchema.cs` migration with complete schema
+- `src/backend/WorkflowPlatform.slnx` — added test project reference
+- `src/backend/WorkflowPlatform.Api.Tests/` — new test project with 13 tests covering entity creation, relationships, and constraints
+
+### Testing & Verification
+
+**Happy Path:**
+- `dotnet build` — solution builds without errors
+- `dotnet test` — all 13 tests pass
+
+**Edge Case:**
+- A `WorkflowDefinition` with zero nodes (no `WorkflowNode` children) persists correctly to the database
+
+**Regression-Sensitive:**
+- Two `WorkflowDefinition` rows with identical `Name` but different `Version` values coexist independently without constraint violation
+- A `WorkflowInstance`'s `DefinitionVersion` snapshot remains unchanged when a new `WorkflowDefinition` version is subsequently created
+
+### Breaking Changes
+None — initial domain schema implementation with no prior consumers.
+
+---
+
 ## [1.0.0] - 2026-08-13
 
 ### Added

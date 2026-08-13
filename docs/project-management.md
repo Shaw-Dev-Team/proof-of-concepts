@@ -3,7 +3,7 @@
 > Status: ACTIVE
 > Tranche: v1
 > Version: v1
-> Last updated: 2026-08-12
+> Last updated: 2026-08-13
 > PRD: docs/prd.md (built against v5)
 > Architecture: docs/architecture.md (built against v5)
 
@@ -12,7 +12,7 @@
 | Phase | Goal | Status |
 |-------|------|--------|
 | Phase 0 | Project scaffolding (Angular app, ASP.NET Core API, SQL Server/EF Core setup) | Done |
-| Phase 1 | Domain & data layer (entity schema, EF Core migrations) | Planned |
+| Phase 1 | Domain & data layer (entity schema, EF Core migrations) | Done |
 | Phase 2 | Workflow Definition Service & API (CRUD + versioning) | Planned |
 | Phase 3 | Task Handler abstraction (interfaces + mock handlers) | Planned |
 | Phase 4 | Workflow Runtime Engine (instance lifecycle, node evaluation) | Planned |
@@ -24,7 +24,7 @@
 
 | ID | Feature | Phase | Priority | Status | Acceptance Criteria |
 |----|---------|-------|----------|--------|---------------------|
-| F-001 | Domain/data schema + EF Core migrations against SQL Server 2022 | 1 | Must | Planned | All entities from Architecture §4 (WorkflowDefinition, Node, Connection, WorkflowInstance, NodeExecution, TaskHandlerReference) exist as EF Core-mapped tables; migrations apply cleanly to a fresh SQL Server 2022 instance |
+| F-001 | Domain/data schema + EF Core migrations against SQL Server 2022 | 1 | Must | Done | All entities from Architecture §4 (WorkflowDefinition, Node, Connection, WorkflowInstance, NodeExecution, TaskHandlerReference) exist as EF Core-mapped tables; migrations apply cleanly to a fresh SQL Server 2022 instance — verified against `(localdb)\MSSQLLocalDB` (a full SQL Server 2022 engine is not installed on this machine; LocalDB used for local dev, consistent with F-015/PM-001) |
 | F-002 | Workflow Definition CRUD + versioning API/service | 2 | Must | Planned | Satisfies FR-002; definitions can be created, retrieved, updated, and versioned independently of any running instance |
 | F-003 | Task Handler abstraction (`ITaskHandler` / `ITaskCompletionCallback`) + mock handlers | 3 | Must | Planned | Satisfies FR-005 and ADR-004; at least SendEmail, CreateInvoice, ValidateRecord, and a HumanApproval-style stub implement the interface |
 | F-004 | Workflow Runtime Engine (instance lifecycle, node evaluation, task invocation) | 4 | Must | Planned | Satisfies FR-004 and Architecture §5 Data Flow; instance moves through the Workflow Instance Lifecycle (§4) and node-level states (§5) correctly for Condition, Switch, Loop, Parallel Split/Merge, Wait/Pause, and Manual Approval nodes |
@@ -86,3 +86,5 @@
 | v4 | 2026-08-13 | Moved `frontend/`/`backend/` → `src/frontend/`/`src/backend/`; resolved PM-001 via LocalDB connection string (verified real `dotnet ef database update`); replaced fabricated Graphify output with a real pipeline run | Post-Phase-0 corrective fix |
 | v5 | 2026-08-13 | Deleted stale duplicate `backend/`/`frontend/` folders left behind at repo root by the prior "move" (which had copied to `src/` without actually removing the originals — confirmed via direct file comparison, root copies were strictly older/incomplete); removed a stray `src/graphify-out/cache/` artifact; re-verified both projects build from `src/` | Post-Phase-0 corrective fix |
 | v6 | 2026-08-13 | Added automatic EF Core migration-on-startup (`Database.Migrate()` in `Program.cs`) so `dotnet run`/`make up-backend` creates the database and applies migrations with no manual step; verified for real by dropping and recreating `WorkflowPlatformDb` against LocalDB; updated F-015 acceptance criteria and test runbook | Post-Phase-0 enhancement |
+| v7 | 2026-08-13 | Marked F-001 Done (EF Core entity schema + `InitialSchema` migration, verified against LocalDB) and Phase 1 Done | Orchestrator Feature Loop — F-001 Reviewer PASS |
+| v8 | 2026-08-13 | Integration verification confirmed for F-001: all entities (WorkflowDefinition, Node, Connection, WorkflowInstance, NodeExecution, TaskHandlerReference) exist as `DbSet<T>`-mapped tables, migration re-verified against LocalDB, no code fixes required. A documentation-only correction (Architecture §4 field descriptions, navigation-collection shape) was applied directly to `docs/architecture.md` (its own v6) and is not duplicated here. Phase 2 (Workflow Definition Service & API) confirmed as the next Planned phase; no Open Items are affected by this work; not a Tranche boundary — Phases 2–7 remain Planned | Finalizer PMBook Update — F-001 Integration PASS |
