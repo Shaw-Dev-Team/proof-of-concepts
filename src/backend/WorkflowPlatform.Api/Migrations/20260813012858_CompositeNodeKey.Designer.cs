@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WorkflowPlatform.Api.Data;
 
@@ -11,9 +12,11 @@ using WorkflowPlatform.Api.Data;
 namespace WorkflowPlatform.Api.Migrations
 {
     [DbContext(typeof(WorkflowPlatformDbContext))]
-    partial class WorkflowPlatformDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260813012858_CompositeNodeKey")]
+    partial class CompositeNodeKey
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

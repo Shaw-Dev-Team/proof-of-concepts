@@ -1,0 +1,162 @@
+{
+  "WorkflowPlatform.Api.Tests/EnumTests.cs": {
+    "mtime": 1786580208.3327553,
+    "ast_hash": "0e884590d34c117d98b2d3552a2d080e",
+    "semantic_hash": "0e884590d34c117d98b2d3552a2d080e"
+  },
+  "WorkflowPlatform.Api.Tests/NodeConnectionTests.cs": {
+    "mtime": 1786584501.8636081,
+    "ast_hash": "1dd5ee77057a4fdddb01d1d2c180a63e",
+    "semantic_hash": "1dd5ee77057a4fdddb01d1d2c180a63e"
+  },
+  "WorkflowPlatform.Api.Tests/TestDbContextFactory.cs": {
+    "mtime": 1786580208.3317497,
+    "ast_hash": "4613c1bc304e9e9120502e363b34375c",
+    "semantic_hash": "4613c1bc304e9e9120502e363b34375c"
+  },
+  "WorkflowPlatform.Api.Tests/WorkflowDefinitionServiceTests.cs": {
+    "mtime": 1786584513.650598,
+    "ast_hash": "bea592f968fb4a061117f1b530489205",
+    "semantic_hash": "bea592f968fb4a061117f1b530489205"
+  },
+  "WorkflowPlatform.Api.Tests/WorkflowDefinitionTests.cs": {
+    "mtime": 1786580208.3327553,
+    "ast_hash": "c5215400f3e7ed89df0a51bb3c060f66",
+    "semantic_hash": "c5215400f3e7ed89df0a51bb3c060f66"
+  },
+  "WorkflowPlatform.Api.Tests/WorkflowInstanceExecutionTests.cs": {
+    "mtime": 1786584501.8636081,
+    "ast_hash": "a5fff6ed9550f43ad7802e406bb25508",
+    "semantic_hash": "a5fff6ed9550f43ad7802e406bb25508"
+  },
+  "WorkflowPlatform.Api.Tests/WorkflowPlatform.Api.Tests.csproj": {
+    "mtime": 1786582286.2000227,
+    "ast_hash": "17c1c4b23cdc13726eeb9dc056eca247",
+    "semantic_hash": "17c1c4b23cdc13726eeb9dc056eca247"
+  },
+  "WorkflowPlatform.Api/Contracts/CreateWorkflowDefinitionRequest.cs": {
+    "mtime": 1786582286.1918027,
+    "ast_hash": "c8a940ee3f6ffe3f438b31459f786afb",
+    "semantic_hash": "c8a940ee3f6ffe3f438b31459f786afb"
+  },
+  "WorkflowPlatform.Api/Contracts/WorkflowDefinitionResponse.cs": {
+    "mtime": 1786582286.1979973,
+    "ast_hash": "8ab0a471b67c381a4ab288498c8e8ecb",
+    "semantic_hash": "8ab0a471b67c381a4ab288498c8e8ecb"
+  },
+  "WorkflowPlatform.Api/Data/WorkflowPlatformDbContext.cs": {
+    "mtime": 1786584485.8545682,
+    "ast_hash": "a5b52d22e5e263c0d150af5fafcc5571",
+    "semantic_hash": "a5b52d22e5e263c0d150af5fafcc5571"
+  },
+  "WorkflowPlatform.Api/Domain/Connection.cs": {
+    "mtime": 1786580208.3287044,
+    "ast_hash": "0fca9cac41abda896107b8aa6754a2ff",
+    "semantic_hash": "0fca9cac41abda896107b8aa6754a2ff"
+  },
+  "WorkflowPlatform.Api/Domain/Node.cs": {
+    "mtime": 1786584468.4834058,
+    "ast_hash": "8d783b3bc57e62b770a40f9fa6a2e630",
+    "semantic_hash": "8d783b3bc57e62b770a40f9fa6a2e630"
+  },
+  "WorkflowPlatform.Api/Domain/NodeExecution.cs": {
+    "mtime": 1786584460.8577702,
+    "ast_hash": "46225cb70324fec73b3108c3ef45d42f",
+    "semantic_hash": "46225cb70324fec73b3108c3ef45d42f"
+  },
+  "WorkflowPlatform.Api/Domain/NodeExecutionState.cs": {
+    "mtime": 1786580208.3266995,
+    "ast_hash": "4bcc6126141af3da890f2b0788a534fe",
+    "semantic_hash": "4bcc6126141af3da890f2b0788a534fe"
+  },
+  "WorkflowPlatform.Api/Domain/NodeType.cs": {
+    "mtime": 1786580208.3242874,
+    "ast_hash": "db17b186c8e244daf5a1f8f270f06401",
+    "semantic_hash": "db17b186c8e244daf5a1f8f270f06401"
+  },
+  "WorkflowPlatform.Api/Domain/TaskHandlerReference.cs": {
+    "mtime": 1786584460.8597674,
+    "ast_hash": "2556fc8066a07b1a5eee898d192e93d6",
+    "semantic_hash": "2556fc8066a07b1a5eee898d192e93d6"
+  },
+  "WorkflowPlatform.Api/Domain/WorkflowDefinition.cs": {
+    "mtime": 1786580208.3277051,
+    "ast_hash": "b7b77311c8872d3fff8f017dff756bcf",
+    "semantic_hash": "b7b77311c8872d3fff8f017dff756bcf"
+  },
+  "WorkflowPlatform.Api/Domain/WorkflowInstance.cs": {
+    "mtime": 1786580208.3287044,
+    "ast_hash": "03a128534248bb0d61fea8607415d757",
+    "semantic_hash": "03a128534248bb0d61fea8607415d757"
+  },
+  "WorkflowPlatform.Api/Domain/WorkflowInstanceStatus.cs": {
+    "mtime": 1786580208.3277051,
+    "ast_hash": "8fa033d00b1a085bfa7379b5ac330f1b",
+    "semantic_hash": "8fa033d00b1a085bfa7379b5ac330f1b"
+  },
+  "WorkflowPlatform.Api/Endpoints/WorkflowDefinitionEndpoints.cs": {
+    "mtime": 1786582286.199023,
+    "ast_hash": "14380cafc146d0ca786effbc21855a9b",
+    "semantic_hash": "14380cafc146d0ca786effbc21855a9b"
+  },
+  "WorkflowPlatform.Api/Migrations/20260812234443_InitialSchema.Designer.cs": {
+    "mtime": 1786578283.7813296,
+    "ast_hash": "aef370c4de31fd940802f42d41761a36",
+    "semantic_hash": "aef370c4de31fd940802f42d41761a36"
+  },
+  "WorkflowPlatform.Api/Migrations/20260812234443_InitialSchema.cs": {
+    "mtime": 1786578283.7793293,
+    "ast_hash": "03b391f3e12bb69eb299718fe75d9d5b",
+    "semantic_hash": "03b391f3e12bb69eb299718fe75d9d5b"
+  },
+  "WorkflowPlatform.Api/Migrations/20260813012858_CompositeNodeKey.Designer.cs": {
+    "mtime": 1786584538.5570865,
+    "ast_hash": "7f2a874cf7b0599adf695d2aa6018ae7",
+    "semantic_hash": "7f2a874cf7b0599adf695d2aa6018ae7"
+  },
+  "WorkflowPlatform.Api/Migrations/20260813012858_CompositeNodeKey.cs": {
+    "mtime": 1786584538.555086,
+    "ast_hash": "974dac09c2855702335f4c41d9b7f6d7",
+    "semantic_hash": "974dac09c2855702335f4c41d9b7f6d7"
+  },
+  "WorkflowPlatform.Api/Migrations/WorkflowPlatformDbContextModelSnapshot.cs": {
+    "mtime": 1786584538.5600617,
+    "ast_hash": "1e0114c19e7d35c682ec7ded337eb232",
+    "semantic_hash": "1e0114c19e7d35c682ec7ded337eb232"
+  },
+  "WorkflowPlatform.Api/Program.cs": {
+    "mtime": 1786582286.2000227,
+    "ast_hash": "d067caadf1c6bb1646d6399760c898c7",
+    "semantic_hash": "d067caadf1c6bb1646d6399760c898c7"
+  },
+  "WorkflowPlatform.Api/Properties/launchSettings.json": {
+    "mtime": 1786522336.7471697,
+    "ast_hash": "c52f31624575c58c6f817661263536ab",
+    "semantic_hash": "c52f31624575c58c6f817661263536ab"
+  },
+  "WorkflowPlatform.Api/Services/IWorkflowDefinitionService.cs": {
+    "mtime": 1786582286.1979973,
+    "ast_hash": "582d8a7b1a8be45f6e4a754c61caccad",
+    "semantic_hash": "582d8a7b1a8be45f6e4a754c61caccad"
+  },
+  "WorkflowPlatform.Api/Services/WorkflowDefinitionExceptions.cs": {
+    "mtime": 1786582286.1979973,
+    "ast_hash": "a2e2e65be6543dab94fdbb2198d08535",
+    "semantic_hash": "a2e2e65be6543dab94fdbb2198d08535"
+  },
+  "WorkflowPlatform.Api/Services/WorkflowDefinitionService.cs": {
+    "mtime": 1786582286.1979973,
+    "ast_hash": "01bdc91664ec65a8c50091547b74c189",
+    "semantic_hash": "01bdc91664ec65a8c50091547b74c189"
+  },
+  "WorkflowPlatform.Api/WorkflowPlatform.Api.csproj": {
+    "mtime": 1786573968.527366,
+    "ast_hash": "459002a52967894511cfd99611695ae8",
+    "semantic_hash": "459002a52967894511cfd99611695ae8"
+  },
+  "WorkflowPlatform.slnx": {
+    "mtime": 1786580208.3307095,
+    "ast_hash": "a8359f592a52cfb7c445a1e071881169",
+    "semantic_hash": "a8359f592a52cfb7c445a1e071881169"
+  }
+}

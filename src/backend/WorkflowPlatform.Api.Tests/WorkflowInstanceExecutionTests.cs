@@ -35,6 +35,7 @@ public class WorkflowInstanceExecutionTests
             EventId = Guid.NewGuid(),
             WorkflowInstanceId = instance.InstanceId,
             NodeId = node.NodeId,
+            WorkflowDefinitionId = definition.DefinitionId,
             State = NodeExecutionState.Completed,
             StartedAt = DateTime.UtcNow,
             CompletedAt = DateTime.UtcNow
@@ -107,6 +108,7 @@ public class WorkflowInstanceExecutionTests
             EventId = Guid.NewGuid(),
             WorkflowInstanceId = instance.InstanceId,
             NodeId = conditionNode.NodeId,
+            WorkflowDefinitionId = definition.DefinitionId,
             State = NodeExecutionState.Running,
             EvaluationOutcome = null
         };

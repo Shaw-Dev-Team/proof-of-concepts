@@ -1,0 +1,1 @@
+{"0": "WorkflowPlatform.Api.Domain", "1": "WorkflowPlatform.Api.Data", "2": "IWorkflowDefinitionService", "3": "InitialSchema", "4": ".Create", "5": ".CreateVersionAsync", "6": "http", "7": "WorkflowPlatform.Api.Tests", "8": "CreateWorkflowDefinitionRequest", "9": "NodeConnectionTests", "10": "WorkflowInstanceExecutionTests", "11": "EnumTests", "12": "WorkflowDefinitionTests"}

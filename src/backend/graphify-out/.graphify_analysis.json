@@ -1,0 +1,395 @@
+{
+  "communities": {
+    "0": [
+      "csharp_namespace:25606e165b424dc6",
+      "csharp_namespace:e64389798e79d0e4",
+      "dbcontext",
+      "dbset",
+      "workflowplatform_api_data_workflowplatformdbcontext",
+      "workflowplatform_api_data_workflowplatformdbcontext_cs_modelbuilder",
+      "workflowplatform_api_data_workflowplatformdbcontext_workflowplatform_api_data_workflowplatformdbcontext",
+      "workflowplatform_api_data_workflowplatformdbcontext_workflowplatform_api_data_workflowplatformdbcontext_onmodelcreating",
+      "workflowplatform_api_domain_connection",
+      "workflowplatform_api_domain_connection_cs_guid",
+      "workflowplatform_api_domain_connection_workflowplatform_api_domain_connection",
+      "workflowplatform_api_domain_node",
+      "workflowplatform_api_domain_node_cs_guid",
+      "workflowplatform_api_domain_node_cs_icollection",
+      "workflowplatform_api_domain_node_workflowplatform_api_domain_node",
+      "workflowplatform_api_domain_nodeexecution",
+      "workflowplatform_api_domain_nodeexecution_cs_datetime",
+      "workflowplatform_api_domain_nodeexecution_cs_guid",
+      "workflowplatform_api_domain_nodeexecution_workflowplatform_api_domain_nodeexecution",
+      "workflowplatform_api_domain_nodeexecutionstate",
+      "workflowplatform_api_domain_nodeexecutionstate_workflowplatform_api_domain_nodeexecutionstate",
+      "workflowplatform_api_domain_nodetype",
+      "workflowplatform_api_domain_nodetype_workflowplatform_api_domain_nodetype",
+      "workflowplatform_api_domain_taskhandlerreference",
+      "workflowplatform_api_domain_taskhandlerreference_cs_guid",
+      "workflowplatform_api_domain_taskhandlerreference_workflowplatform_api_domain_taskhandlerreference",
+      "workflowplatform_api_domain_workflowdefinition",
+      "workflowplatform_api_domain_workflowdefinition_cs_datetime",
+      "workflowplatform_api_domain_workflowdefinition_cs_guid",
+      "workflowplatform_api_domain_workflowdefinition_cs_icollection",
+      "workflowplatform_api_domain_workflowdefinition_workflowplatform_api_domain_workflowdefinition",
+      "workflowplatform_api_domain_workflowinstance",
+      "workflowplatform_api_domain_workflowinstance_cs_datetime",
+      "workflowplatform_api_domain_workflowinstance_cs_guid",
+      "workflowplatform_api_domain_workflowinstance_cs_icollection",
+      "workflowplatform_api_domain_workflowinstance_workflowplatform_api_domain_workflowinstance",
+      "workflowplatform_api_domain_workflowinstancestatus",
+      "workflowplatform_api_domain_workflowinstancestatus_workflowplatform_api_domain_workflowinstancestatus",
+      "workflowplatform_api_tests_enumtests",
+      "workflowplatform_api_tests_nodeconnectiontests",
+      "workflowplatform_api_tests_workflowdefinitiontests",
+      "workflowplatform_api_tests_workflowinstanceexecutiontests"
+    ],
+    "1": [
+      "csharp_namespace:1fcff15045231982",
+      "csharp_namespace:94a80e293c960e91",
+      "csharp_namespace:bea03c00d1c7f7eb",
+      "csharp_namespace:fa391d705d170190",
+      "exception",
+      "idictionary",
+      "workflowplatform_api_endpoints_workflowdefinitionendpoints",
+      "workflowplatform_api_program",
+      "workflowplatform_api_services_iworkflowdefinitionservice",
+      "workflowplatform_api_services_workflowdefinitionexceptions",
+      "workflowplatform_api_services_workflowdefinitionexceptions_workflowplatform_api_services_workflowdefinitionconflictexception",
+      "workflowplatform_api_services_workflowdefinitionexceptions_workflowplatform_api_services_workflowdefinitionvalidationexception",
+      "workflowplatform_api_services_workflowdefinitionservice",
+      "workflowplatform_api_tests_testdbcontextfactory",
+      "workflowplatform_api_tests_testdbcontextfactory_workflowplatform_api_tests_testdbcontextfactory",
+      "workflowplatform_api_tests_workflowdefinitionservicetests"
+    ],
+    "2": [
+      "iendpointroutebuilder",
+      "iresult",
+      "routegroupbuilder",
+      "workflowplatform_api_endpoints_workflowdefinitionendpoints_cs_cancellationtoken",
+      "workflowplatform_api_endpoints_workflowdefinitionendpoints_cs_guid",
+      "workflowplatform_api_endpoints_workflowdefinitionendpoints_cs_task",
+      "workflowplatform_api_endpoints_workflowdefinitionendpoints_workflowplatform_api_endpoints_workflowdefinitionendpoints",
+      "workflowplatform_api_endpoints_workflowdefinitionendpoints_workflowplatform_api_endpoints_workflowdefinitionendpoints_createasync",
+      "workflowplatform_api_endpoints_workflowdefinitionendpoints_workflowplatform_api_endpoints_workflowdefinitionendpoints_createversionasync",
+      "workflowplatform_api_endpoints_workflowdefinitionendpoints_workflowplatform_api_endpoints_workflowdefinitionendpoints_getbyidasync",
+      "workflowplatform_api_endpoints_workflowdefinitionendpoints_workflowplatform_api_endpoints_workflowdefinitionendpoints_getlatestbynameasync",
+      "workflowplatform_api_endpoints_workflowdefinitionendpoints_workflowplatform_api_endpoints_workflowdefinitionendpoints_listdistinctdefinitionsasync",
+      "workflowplatform_api_endpoints_workflowdefinitionendpoints_workflowplatform_api_endpoints_workflowdefinitionendpoints_listversionsbynameasync",
+      "workflowplatform_api_endpoints_workflowdefinitionendpoints_workflowplatform_api_endpoints_workflowdefinitionendpoints_mapworkflowdefinitionendpoints",
+      "workflowplatform_api_services_iworkflowdefinitionservice_cs_cancellationtoken",
+      "workflowplatform_api_services_iworkflowdefinitionservice_cs_guid",
+      "workflowplatform_api_services_iworkflowdefinitionservice_cs_ireadonlylist",
+      "workflowplatform_api_services_iworkflowdefinitionservice_cs_task",
+      "workflowplatform_api_services_iworkflowdefinitionservice_workflowplatform_api_services_iworkflowdefinitionservice",
+      "workflowplatform_api_services_iworkflowdefinitionservice_workflowplatform_api_services_iworkflowdefinitionservice_createasync",
+      "workflowplatform_api_services_iworkflowdefinitionservice_workflowplatform_api_services_iworkflowdefinitionservice_createversionasync",
+      "workflowplatform_api_services_iworkflowdefinitionservice_workflowplatform_api_services_iworkflowdefinitionservice_getbyidasync",
+      "workflowplatform_api_services_iworkflowdefinitionservice_workflowplatform_api_services_iworkflowdefinitionservice_getlatestbynameasync",
+      "workflowplatform_api_services_iworkflowdefinitionservice_workflowplatform_api_services_iworkflowdefinitionservice_listdistinctdefinitionsasync",
+      "workflowplatform_api_services_iworkflowdefinitionservice_workflowplatform_api_services_iworkflowdefinitionservice_listversionsbynameasync"
+    ],
+    "3": [
+      "csharp_namespace:972cc4b2bce773df",
+      "migration",
+      "modelsnapshot",
+      "workflowplatform_api_migrations_20260812234443_initialschema",
+      "workflowplatform_api_migrations_20260812234443_initialschema_cs_migrationbuilder",
+      "workflowplatform_api_migrations_20260812234443_initialschema_designer",
+      "workflowplatform_api_migrations_20260812234443_initialschema_designer_cs_modelbuilder",
+      "workflowplatform_api_migrations_20260812234443_initialschema_designer_workflowplatform_api_migrations_initialschema",
+      "workflowplatform_api_migrations_20260812234443_initialschema_designer_workflowplatform_api_migrations_initialschema_buildtargetmodel",
+      "workflowplatform_api_migrations_20260812234443_initialschema_workflowplatform_api_migrations_initialschema_down",
+      "workflowplatform_api_migrations_20260812234443_initialschema_workflowplatform_api_migrations_initialschema_up",
+      "workflowplatform_api_migrations_20260813012858_compositenodekey",
+      "workflowplatform_api_migrations_20260813012858_compositenodekey_cs_migrationbuilder",
+      "workflowplatform_api_migrations_20260813012858_compositenodekey_designer",
+      "workflowplatform_api_migrations_20260813012858_compositenodekey_designer_cs_modelbuilder",
+      "workflowplatform_api_migrations_20260813012858_compositenodekey_designer_workflowplatform_api_migrations_compositenodekey",
+      "workflowplatform_api_migrations_20260813012858_compositenodekey_designer_workflowplatform_api_migrations_compositenodekey_buildtargetmodel",
+      "workflowplatform_api_migrations_20260813012858_compositenodekey_workflowplatform_api_migrations_compositenodekey_down",
+      "workflowplatform_api_migrations_20260813012858_compositenodekey_workflowplatform_api_migrations_compositenodekey_up",
+      "workflowplatform_api_migrations_workflowplatformdbcontextmodelsnapshot",
+      "workflowplatform_api_migrations_workflowplatformdbcontextmodelsnapshot_cs_modelbuilder",
+      "workflowplatform_api_migrations_workflowplatformdbcontextmodelsnapshot_workflowplatform_api_migrations_workflowplatformdbcontextmodelsnapshot",
+      "workflowplatform_api_migrations_workflowplatformdbcontextmodelsnapshot_workflowplatform_api_migrations_workflowplatformdbcontextmodelsnapshot_buildmodel"
+    ],
+    "4": [
+      "workflowplatform_api_services_workflowdefinitionservice_workflowplatform_api_services_workflowdefinitionservice_createasync",
+      "workflowplatform_api_tests_testdbcontextfactory_workflowplatform_api_tests_testdbcontextfactory_create",
+      "workflowplatform_api_tests_workflowdefinitionservicetests_cs_fact",
+      "workflowplatform_api_tests_workflowdefinitionservicetests_cs_task",
+      "workflowplatform_api_tests_workflowdefinitionservicetests_workflowplatform_api_tests_workflowdefinitionservicetests",
+      "workflowplatform_api_tests_workflowdefinitionservicetests_workflowplatform_api_tests_workflowdefinitionservicetests_concurrentsamenameandversion_violatesuniqueindex",
+      "workflowplatform_api_tests_workflowdefinitionservicetests_workflowplatform_api_tests_workflowdefinitionservicetests_createasync_connectionreferencesunknownnode_throwsvalidationexception",
+      "workflowplatform_api_tests_workflowdefinitionservicetests_workflowplatform_api_tests_workflowdefinitionservicetests_createasync_missingcreatedby_throwsvalidationexception",
+      "workflowplatform_api_tests_workflowdefinitionservicetests_workflowplatform_api_tests_workflowdefinitionservicetests_createasync_missingname_throwsvalidationexception",
+      "workflowplatform_api_tests_workflowdefinitionservicetests_workflowplatform_api_tests_workflowdefinitionservicetests_createasync_withnodesandconnections_persistsallthreeentitytypes",
+      "workflowplatform_api_tests_workflowdefinitionservicetests_workflowplatform_api_tests_workflowdefinitionservicetests_createasync_withzeronodesandconnections_persistsasemptydraft",
+      "workflowplatform_api_tests_workflowdefinitionservicetests_workflowplatform_api_tests_workflowdefinitionservicetests_createversionasync_forexistingdefinition_incrementsversionandleavespriorversionunchanged",
+      "workflowplatform_api_tests_workflowdefinitionservicetests_workflowplatform_api_tests_workflowdefinitionservicetests_createversionasync_fornamethatdoesnotexistyet_behavesasversiononecreation",
+      "workflowplatform_api_tests_workflowdefinitionservicetests_workflowplatform_api_tests_workflowdefinitionservicetests_createversionasync_reusingapriorversionsnodeid_succeedsasdistinctrowperversion",
+      "workflowplatform_api_tests_workflowdefinitionservicetests_workflowplatform_api_tests_workflowdefinitionservicetests_getlatestbynameasync_returnshighestversionrow",
+      "workflowplatform_api_tests_workflowdefinitionservicetests_workflowplatform_api_tests_workflowdefinitionservicetests_listdistinctdefinitionsasync_returnsonerowpernameatlatestversion",
+      "workflowplatform_api_tests_workflowdefinitionservicetests_workflowplatform_api_tests_workflowdefinitionservicetests_listversionsbynameasync_returnsallversionsinversionorder",
+      "workflowplatform_api_tests_workflowdefinitionservicetests_workflowplatform_api_tests_workflowdefinitionservicetests_validrequest"
+    ],
+    "5": [
+      "workflowplatform_api_contracts_workflowdefinitionresponse",
+      "workflowplatform_api_contracts_workflowdefinitionresponse_workflowplatform_api_contracts_connectionresponse",
+      "workflowplatform_api_contracts_workflowdefinitionresponse_workflowplatform_api_contracts_noderesponse",
+      "workflowplatform_api_contracts_workflowdefinitionresponse_workflowplatform_api_contracts_workflowdefinitionresponse",
+      "workflowplatform_api_contracts_workflowdefinitionresponse_workflowplatform_api_contracts_workflowdefinitionsummaryresponse",
+      "workflowplatform_api_services_workflowdefinitionservice_cs_cancellationtoken",
+      "workflowplatform_api_services_workflowdefinitionservice_cs_guid",
+      "workflowplatform_api_services_workflowdefinitionservice_cs_ireadonlylist",
+      "workflowplatform_api_services_workflowdefinitionservice_cs_task",
+      "workflowplatform_api_services_workflowdefinitionservice_workflowplatform_api_services_workflowdefinitionservice",
+      "workflowplatform_api_services_workflowdefinitionservice_workflowplatform_api_services_workflowdefinitionservice_builddefinition",
+      "workflowplatform_api_services_workflowdefinitionservice_workflowplatform_api_services_workflowdefinitionservice_createversionasync",
+      "workflowplatform_api_services_workflowdefinitionservice_workflowplatform_api_services_workflowdefinitionservice_getbyidasync",
+      "workflowplatform_api_services_workflowdefinitionservice_workflowplatform_api_services_workflowdefinitionservice_getlatestbynameasync",
+      "workflowplatform_api_services_workflowdefinitionservice_workflowplatform_api_services_workflowdefinitionservice_listdistinctdefinitionsasync",
+      "workflowplatform_api_services_workflowdefinitionservice_workflowplatform_api_services_workflowdefinitionservice_listversionsbynameasync",
+      "workflowplatform_api_services_workflowdefinitionservice_workflowplatform_api_services_workflowdefinitionservice_saveasync",
+      "workflowplatform_api_services_workflowdefinitionservice_workflowplatform_api_services_workflowdefinitionservice_toresponse",
+      "workflowplatform_api_services_workflowdefinitionservice_workflowplatform_api_services_workflowdefinitionservice_tosummary",
+      "workflowplatform_api_services_workflowdefinitionservice_workflowplatform_api_services_workflowdefinitionservice_validate"
+    ],
+    "6": [
+      "workflowplatform_api_properties_launchsettings",
+      "workflowplatform_api_properties_launchsettings_environmentvariables_aspnetcore_environment",
+      "workflowplatform_api_properties_launchsettings_http_applicationurl",
+      "workflowplatform_api_properties_launchsettings_http_commandname",
+      "workflowplatform_api_properties_launchsettings_http_dotnetrunmessages",
+      "workflowplatform_api_properties_launchsettings_http_environmentvariables",
+      "workflowplatform_api_properties_launchsettings_http_launchbrowser",
+      "workflowplatform_api_properties_launchsettings_https_applicationurl",
+      "workflowplatform_api_properties_launchsettings_https_commandname",
+      "workflowplatform_api_properties_launchsettings_https_dotnetrunmessages",
+      "workflowplatform_api_properties_launchsettings_https_environmentvariables",
+      "workflowplatform_api_properties_launchsettings_https_launchbrowser",
+      "workflowplatform_api_properties_launchsettings_profiles",
+      "workflowplatform_api_properties_launchsettings_profiles_http",
+      "workflowplatform_api_properties_launchsettings_profiles_https",
+      "workflowplatform_api_properties_launchsettings_schema"
+    ],
+    "7": [
+      "nuget_microsoft_aspnetcore_openapi",
+      "nuget_microsoft_entityframeworkcore",
+      "nuget_microsoft_entityframeworkcore_design",
+      "nuget_microsoft_entityframeworkcore_inmemory",
+      "nuget_microsoft_entityframeworkcore_sqlite",
+      "nuget_microsoft_entityframeworkcore_sqlserver",
+      "nuget_microsoft_net_test_sdk",
+      "nuget_xunit",
+      "nuget_xunit_runner_visualstudio",
+      "sdk_microsoft_net_sdk",
+      "sdk_microsoft_net_sdk_web",
+      "workflowplatform",
+      "workflowplatform_api_tests_workflowplatform_api_tests",
+      "workflowplatform_api_workflowplatform_api",
+      "workflowplatform_api_workflowplatform_api_csproj_framework_net10_0"
+    ],
+    "8": [
+      "list",
+      "workflowplatform_api_contracts_createworkflowdefinitionrequest",
+      "workflowplatform_api_contracts_createworkflowdefinitionrequest_cs_guid",
+      "workflowplatform_api_contracts_createworkflowdefinitionrequest_workflowplatform_api_contracts_createconnectionrequest",
+      "workflowplatform_api_contracts_createworkflowdefinitionrequest_workflowplatform_api_contracts_createnoderequest",
+      "workflowplatform_api_contracts_createworkflowdefinitionrequest_workflowplatform_api_contracts_createworkflowdefinitionrequest"
+    ],
+    "9": [
+      "workflowplatform_api_tests_nodeconnectiontests_cs_fact",
+      "workflowplatform_api_tests_nodeconnectiontests_workflowplatform_api_tests_nodeconnectiontests",
+      "workflowplatform_api_tests_nodeconnectiontests_workflowplatform_api_tests_nodeconnectiontests_connection_conditionexpression_nullfornonbranchingconnection",
+      "workflowplatform_api_tests_nodeconnectiontests_workflowplatform_api_tests_nodeconnectiontests_connection_conditionexpression_populatedforbranchingconnection",
+      "workflowplatform_api_tests_nodeconnectiontests_workflowplatform_api_tests_nodeconnectiontests_newdefinition",
+      "workflowplatform_api_tests_nodeconnectiontests_workflowplatform_api_tests_nodeconnectiontests_taskhandlerreference_associateswithtasknode",
+      "workflowplatform_api_tests_nodeconnectiontests_workflowplatform_api_tests_nodeconnectiontests_taskhandlerreference_missingrequiredhandlertype_throwsonsave",
+      "workflowplatform_api_tests_nodeconnectiontests_workflowplatform_api_tests_nodeconnectiontests_workflowdefinition_loadsitsnodesandconnections"
+    ],
+    "10": [
+      "workflowplatform_api_tests_workflowinstanceexecutiontests_cs_fact",
+      "workflowplatform_api_tests_workflowinstanceexecutiontests_workflowplatform_api_tests_workflowinstanceexecutiontests",
+      "workflowplatform_api_tests_workflowinstanceexecutiontests_workflowplatform_api_tests_workflowinstanceexecutiontests_newdefinition",
+      "workflowplatform_api_tests_workflowinstanceexecutiontests_workflowplatform_api_tests_workflowinstanceexecutiontests_nodeexecution_evaluationoutcome_nulluntilevaluated",
+      "workflowplatform_api_tests_workflowinstanceexecutiontests_workflowplatform_api_tests_workflowinstanceexecutiontests_workflowinstance_definitionversion_issnapshotnotlivereference",
+      "workflowplatform_api_tests_workflowinstanceexecutiontests_workflowplatform_api_tests_workflowinstanceexecutiontests_workflowinstance_loadsitsexecutionhistory"
+    ],
+    "11": [
+      "workflowplatform_api_tests_enumtests_cs_fact",
+      "workflowplatform_api_tests_enumtests_workflowplatform_api_tests_enumtests",
+      "workflowplatform_api_tests_enumtests_workflowplatform_api_tests_enumtests_nodeexecutionstate_containsexactlythelifecyclediagramstates",
+      "workflowplatform_api_tests_enumtests_workflowplatform_api_tests_enumtests_workflowinstancestatus_containsexactlythelifecyclediagramstates"
+    ],
+    "12": [
+      "workflowplatform_api_tests_workflowdefinitiontests_cs_fact",
+      "workflowplatform_api_tests_workflowdefinitiontests_workflowplatform_api_tests_workflowdefinitiontests",
+      "workflowplatform_api_tests_workflowdefinitiontests_workflowplatform_api_tests_workflowdefinitiontests_twodefinitions_samename_differentversions_coexistindependently",
+      "workflowplatform_api_tests_workflowdefinitiontests_workflowplatform_api_tests_workflowdefinitiontests_workflowdefinition_canbepersistedandretrieved_withzeronodes",
+      "workflowplatform_api_tests_workflowdefinitiontests_workflowplatform_api_tests_workflowdefinitiontests_workflowdefinition_missingrequiredname_throwsonsave"
+    ]
+  },
+  "cohesion": {
+    "0": 0.07084785133565621,
+    "1": 0.18333333333333332,
+    "2": 0.20333333333333334,
+    "3": 0.1067193675889328,
+    "4": 0.4444444444444444,
+    "5": 0.22105263157894736,
+    "6": 0.13333333333333333,
+    "7": 0.1523809523809524,
+    "8": 0.5333333333333333,
+    "9": 0.5714285714285714,
+    "10": 0.6666666666666666,
+    "11": 0.6666666666666666,
+    "12": 0.6
+  },
+  "gods": [
+    {
+      "id": "csharp_namespace:25606e165b424dc6",
+      "label": "WorkflowPlatform.Api.Domain",
+      "degree": 18
+    },
+    {
+      "id": "workflowplatform_api_services_iworkflowdefinitionservice_workflowplatform_api_services_iworkflowdefinitionservice",
+      "label": "IWorkflowDefinitionService",
+      "degree": 14
+    },
+    {
+      "id": "workflowplatform_api_tests_workflowdefinitionservicetests_workflowplatform_api_tests_workflowdefinitionservicetests",
+      "label": "WorkflowDefinitionServiceTests",
+      "degree": 14
+    },
+    {
+      "id": "workflowplatform_api_services_workflowdefinitionservice_workflowplatform_api_services_workflowdefinitionservice",
+      "label": "WorkflowDefinitionService",
+      "degree": 14
+    },
+    {
+      "id": "workflowplatform_api_domain_workflowdefinition_workflowplatform_api_domain_workflowdefinition",
+      "label": "WorkflowDefinition",
+      "degree": 13
+    },
+    {
+      "id": "workflowplatform_api_contracts_createworkflowdefinitionrequest_workflowplatform_api_contracts_createworkflowdefinitionrequest",
+      "label": "CreateWorkflowDefinitionRequest",
+      "degree": 13
+    },
+    {
+      "id": "workflowplatform_api_data_workflowplatformdbcontext_workflowplatform_api_data_workflowplatformdbcontext",
+      "label": "WorkflowPlatformDbContext",
+      "degree": 12
+    },
+    {
+      "id": "workflowplatform_api_domain_node_workflowplatform_api_domain_node",
+      "label": "Node",
+      "degree": 10
+    },
+    {
+      "id": "workflowplatform_api_contracts_workflowdefinitionresponse_workflowplatform_api_contracts_workflowdefinitionresponse",
+      "label": "WorkflowDefinitionResponse",
+      "degree": 10
+    },
+    {
+      "id": "workflowplatform_api_domain_workflowinstance_workflowplatform_api_domain_workflowinstance",
+      "label": "WorkflowInstance",
+      "degree": 9
+    }
+  ],
+  "surprises": [
+    {
+      "source": "WorkflowPlatform.Api.Tests",
+      "target": "net10.0",
+      "source_files": [
+        "WorkflowPlatform.Api.Tests/WorkflowPlatform.Api.Tests.csproj",
+        "WorkflowPlatform.Api/WorkflowPlatform.Api.csproj"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "connects across different repos/directories; peripheral node `net10.0` unexpectedly reaches hub `WorkflowPlatform.Api.Tests`"
+    },
+    {
+      "source": "WorkflowDefinitionService",
+      "target": "WorkflowPlatformDbContext",
+      "source_files": [
+        "WorkflowPlatform.Api/Services/WorkflowDefinitionService.cs",
+        "WorkflowPlatform.Api/Data/WorkflowPlatformDbContext.cs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "bridges separate communities"
+    },
+    {
+      "source": "NodeExecution",
+      "target": "NodeExecutionState",
+      "source_files": [
+        "WorkflowPlatform.Api/Domain/NodeExecution.cs",
+        "WorkflowPlatform.Api/Domain/NodeExecutionState.cs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "peripheral node `NodeExecutionState` unexpectedly reaches hub `NodeExecution`"
+    },
+    {
+      "source": "WorkflowInstance",
+      "target": "WorkflowInstanceStatus",
+      "source_files": [
+        "WorkflowPlatform.Api/Domain/WorkflowInstance.cs",
+        "WorkflowPlatform.Api/Domain/WorkflowInstanceStatus.cs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "references",
+      "why": "peripheral node `WorkflowInstanceStatus` unexpectedly reaches hub `WorkflowInstance`"
+    },
+    {
+      "source": "WorkflowDefinitionService",
+      "target": "IWorkflowDefinitionService",
+      "source_files": [
+        "WorkflowPlatform.Api/Services/WorkflowDefinitionService.cs",
+        "WorkflowPlatform.Api/Services/IWorkflowDefinitionService.cs"
+      ],
+      "confidence": "EXTRACTED",
+      "relation": "implements",
+      "why": "bridges separate communities"
+    }
+  ],
+  "questions": [
+    {
+      "type": "bridge_node",
+      "question": "Why does `WorkflowPlatform.Api.Data` connect `WorkflowPlatform.Api.Data` to `WorkflowPlatform.Api.Domain`, `InitialSchema`?",
+      "why": "High betweenness centrality (0.180) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `WorkflowPlatformDbContext` connect `WorkflowPlatform.Api.Domain` to `.Create`, `.CreateVersionAsync`?",
+      "why": "High betweenness centrality (0.146) - this node is a cross-community bridge."
+    },
+    {
+      "type": "bridge_node",
+      "question": "Why does `WorkflowPlatform.Api.Domain` connect `WorkflowPlatform.Api.Domain` to `CreateWorkflowDefinitionRequest`, `WorkflowPlatform.Api.Data`, `.CreateVersionAsync`?",
+      "why": "High betweenness centrality (0.142) - this node is a cross-community bridge."
+    },
+    {
+      "type": "isolated_nodes",
+      "question": "What connects `ConnectionResponse`, `NodeResponse`, `applicationUrl` to the rest of the system?",
+      "why": "22 weakly-connected nodes found - possible documentation gaps or missing edges."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `WorkflowPlatform.Api.Domain` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.07084785133565621 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `InitialSchema` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.1067193675889328 - nodes in this community are weakly interconnected."
+    },
+    {
+      "type": "low_cohesion",
+      "question": "Should `http` be split into smaller, more focused modules?",
+      "why": "Cohesion score 0.13333333333333333 - nodes in this community are weakly interconnected."
+    }
+  ]
+}

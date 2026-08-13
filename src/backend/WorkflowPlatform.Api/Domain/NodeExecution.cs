@@ -11,6 +11,13 @@ public class NodeExecution
 
     public Guid NodeId { get; set; }
 
+    /// <summary>
+    /// The <see cref="WorkflowDefinition"/> version that <see cref="NodeId"/> belongs to — required
+    /// alongside <see cref="NodeId"/> to resolve <see cref="Node"/>'s composite key (a node's identity
+    /// is only unique per definition version, not globally).
+    /// </summary>
+    public Guid WorkflowDefinitionId { get; set; }
+
     public NodeExecutionState State { get; set; }
 
     public DateTime? StartedAt { get; set; }

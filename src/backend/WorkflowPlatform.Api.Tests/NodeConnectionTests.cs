@@ -108,6 +108,7 @@ public class NodeConnectionTests
         {
             TaskHandlerReferenceId = Guid.NewGuid(),
             NodeId = taskNode.NodeId,
+            WorkflowDefinitionId = definition.DefinitionId,
             HandlerType = "SendEmail"
         };
 
@@ -131,6 +132,7 @@ public class NodeConnectionTests
         {
             TaskHandlerReferenceId = Guid.NewGuid(),
             NodeId = taskNode.NodeId,
+            WorkflowDefinitionId = definition.DefinitionId,
             HandlerType = "placeholder"
         };
         handlerReference.HandlerType = null!;

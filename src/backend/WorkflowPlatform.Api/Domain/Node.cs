@@ -5,6 +5,12 @@ namespace WorkflowPlatform.Api.Domain;
 /// adjacency is exposed via normalized <see cref="Connection"/> navigations rather than
 /// denormalized ID arrays on this entity.
 /// </summary>
+/// <remarks>
+/// Keyed by the composite (<see cref="NodeId"/>, <see cref="WorkflowDefinitionId"/>), not
+/// <see cref="NodeId"/> alone, so a node's logical identity can be preserved across versions
+/// (the client may reuse a v1 <see cref="NodeId"/> in a v2 payload) while every version's row
+/// tree remains a fully independent, immutable copy per NFR-005.
+/// </remarks>
 public class Node
 {
     public Guid NodeId { get; set; }

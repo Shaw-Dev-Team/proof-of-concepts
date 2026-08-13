@@ -90,13 +90,15 @@ Absorbed from the earlier draft (docs/workflow-platform-prd.md §8/§9), which h
 ### Entity Schema
 
 - **WorkflowDefinition** — `definitionId`, `name`, `version`, `description`, `status`, `createdBy`, `createdAt`, `nodes[]`, `connections[]`, `metadata`
-- **Node** — `nodeId`, `type` (see Node Types above), `name`, `description`, `configuration`, `incomingConnections[]`, `outgoingConnections[]` (normalized navigation collections to `Connection`, not raw ID arrays — per ADR-003's adjacency-style modeling)
-- **Connection** — `id`, `sourceNodeId`, `targetNodeId`, `conditionExpression` (optional; used by Condition/Switch nodes)
-- **WorkflowInstance** — `instanceId`, `workflowDefinitionId`, `definitionVersion`, `status` (see Workflow Instance Lifecycle below), `currentNodes[]` (normalized many-to-many navigation to `Node`, not a raw ID array — per ADR-003), `startTime`, `endTime`, `executionHistory[]`
-- **NodeExecution** (execution-history entry) — `eventId`, `nodeId`, `state` (Pending/Ready/Running/Completed/Failed/Skipped — matches the rendered node-lifecycle diagram), `startedAt`, `completedAt`, `result`, `evaluationOutcome` (for Condition/Switch nodes)
-- **TaskHandlerReference** — `handlerType`, `configuration`, `externalMetadata`
+- **Node** — `nodeId`, `workflowDefinitionId`, `type` (see Node Types above), `name`, `description`, `configuration`, `incomingConnections[]`, `outgoingConnections[]` (normalized navigation collections to `Connection`, not raw ID arrays — per ADR-003's adjacency-style modeling). Keyed by the composite (`nodeId`, `workflowDefinitionId`), not `nodeId` alone, so a node's logical identity can be preserved by the client across versions while every version's row remains a fully independent, immutable copy (NFR-005)
+- **Connection** — `id`, `workflowDefinitionId`, `sourceNodeId`, `targetNodeId`, `conditionExpression` (optional; used by Condition/Switch nodes). `sourceNodeId`/`targetNodeId` reference `Node`'s composite key (paired with `workflowDefinitionId`), not `nodeId` alone
+- **WorkflowInstance** — `instanceId`, `workflowDefinitionId`, `definitionVersion`, `status` (see Workflow Instance Lifecycle below), `currentNodes[]` (normalized many-to-many navigation to `Node`, not a raw ID array — per ADR-003; the join carries `workflowDefinitionId` alongside `nodeId` to resolve `Node`'s composite key), `startTime`, `endTime`, `executionHistory[]`
+- **NodeExecution** (execution-history entry) — `eventId`, `nodeId`, `workflowDefinitionId` (identifies which version's `Node` this entry refers to, needed alongside `nodeId` for `Node`'s composite key), `state` (Pending/Ready/Running/Completed/Failed/Skipped — matches the rendered node-lifecycle diagram), `startedAt`, `completedAt`, `result`, `evaluationOutcome` (for Condition/Switch nodes)
+- **TaskHandlerReference** — `nodeId`, `workflowDefinitionId` (paired with `nodeId` for `Node`'s composite key), `handlerType`, `configuration`, `externalMetadata`
 
 Diagram type chosen: an ER diagram, since this section is specifically about data shape and relationships — a flowchart would obscure that.
+
+> Note: `TaskHandlerReference`'s `nodeId` field was missing from this list prior to v7 — a pre-existing drift unrelated to the composite-key change, corrected alongside it since this section was already being touched.
 
 ![Domain Model Entities](diagrams/img/domain-model-entities.png)
 
@@ -182,3 +184,4 @@ A companion state diagram covers node lifecycle (`Pending → Ready → Running 
 | v4 | 2026-08-12 | Added §4 Domain Model (node type catalog, entity schema, instance-lifecycle + ER diagrams, condition evaluation state), FR-007 (dashboard detail), and R1-R3 (delivery risks) — all surfaced by comparing against docs/workflow-platform-prd.md; sections renumbered | Triage edit |
 | v5 | 2026-08-12 | Status → APPROVED; PRD citation bumped to v5 (Future Considerations note, no impact) | Gate approval |
 | v6 | 2026-08-13 | §4 Entity Schema: `Node`/`WorkflowInstance` field descriptions corrected from raw ID arrays (`incomingConnectionIds[]`/`outgoingConnectionIds[]`/`currentNodeIds[]`) to the normalized navigation-collection shape F-001 actually implemented, per ADR-003's adjacency-style modeling guidance — no design change, doc was out of sync with the already-approved ADR | Integration Agent — F-001 documentation drift fix |
+| v7 | 2026-08-13 | §4 Entity Schema: documented `Node`'s composite key (`nodeId`, `workflowDefinitionId`) and the resulting `workflowDefinitionId` FK additions on `Connection`, `NodeExecution`, `TaskHandlerReference`, and the `WorkflowInstance.currentNodes` join — reflects the approved schema correction (Node PK widened so a node's identity can be reused across versions per NFR-005); also added `TaskHandlerReference.nodeId`, missing from the field list since v4 (pre-existing, unrelated drift) | Integration Agent — Node composite-key schema correction |

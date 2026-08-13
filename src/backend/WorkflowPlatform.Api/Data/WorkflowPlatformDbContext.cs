@@ -44,17 +44,19 @@ public class WorkflowPlatformDbContext : DbContext
 
         modelBuilder.Entity<Node>(entity =>
         {
-            entity.HasKey(n => n.NodeId);
+            // Composite so a node's logical identity (NodeId) can be reused across versions
+            // (WorkflowDefinitionId) without colliding \u2014 see Node's remarks.
+            entity.HasKey(n => new { n.NodeId, n.WorkflowDefinitionId });
             entity.Property(n => n.Name).IsRequired().HasMaxLength(256);
 
             entity.HasMany(n => n.OutgoingConnections)
                 .WithOne(c => c.SourceNode)
-                .HasForeignKey(c => c.SourceNodeId)
+                .HasForeignKey(c => new { c.SourceNodeId, c.WorkflowDefinitionId })
                 .OnDelete(DeleteBehavior.Restrict);
 
             entity.HasMany(n => n.IncomingConnections)
                 .WithOne(c => c.TargetNode)
-                .HasForeignKey(c => c.TargetNodeId)
+                .HasForeignKey(c => new { c.TargetNodeId, c.WorkflowDefinitionId })
                 .OnDelete(DeleteBehavior.Restrict);
         });
 
@@ -77,9 +79,20 @@ public class WorkflowPlatformDbContext : DbContext
                 .HasForeignKey(e => e.WorkflowInstanceId)
                 .OnDelete(DeleteBehavior.Cascade);
 
+            // Explicit shared-type join entity (rather than the implicit anonymous-type join
+            // previously used) because Node's key is now composite \u2014 the join table must carry
+            // WorkflowDefinitionId alongside NodeId for the FK to Node to resolve.
             entity.HasMany(i => i.CurrentNodes)
                 .WithMany()
-                .UsingEntity(j => j.ToTable("WorkflowInstanceCurrentNodes"));
+                .UsingEntity<Dictionary<string, object>>(
+                    "WorkflowInstanceCurrentNodes",
+                    j => j.HasOne<Node>().WithMany().HasForeignKey("NodeId", "WorkflowDefinitionId").OnDelete(DeleteBehavior.Restrict),
+                    j => j.HasOne<WorkflowInstance>().WithMany().HasForeignKey("WorkflowInstanceId").OnDelete(DeleteBehavior.Cascade),
+                    j =>
+                    {
+                        j.HasKey("WorkflowInstanceId", "NodeId", "WorkflowDefinitionId");
+                        j.ToTable("WorkflowInstanceCurrentNodes");
+                    });
         });
 
         modelBuilder.Entity<NodeExecution>(entity =>
@@ -88,7 +101,7 @@ public class WorkflowPlatformDbContext : DbContext
 
             entity.HasOne(e => e.Node)
                 .WithMany()
-                .HasForeignKey(e => e.NodeId)
+                .HasForeignKey(e => new { e.NodeId, e.WorkflowDefinitionId })
                 .OnDelete(DeleteBehavior.Restrict);
         });
 
@@ -99,10 +112,10 @@ public class WorkflowPlatformDbContext : DbContext
 
             entity.HasOne(t => t.Node)
                 .WithOne()
-                .HasForeignKey<TaskHandlerReference>(t => t.NodeId)
+                .HasForeignKey<TaskHandlerReference>(t => new { t.NodeId, t.WorkflowDefinitionId })
                 .OnDelete(DeleteBehavior.Cascade);
 
-            entity.HasIndex(t => t.NodeId).IsUnique();
+            entity.HasIndex(t => new { t.NodeId, t.WorkflowDefinitionId }).IsUnique();
         });
     }
 }

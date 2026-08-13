@@ -2,10 +2,10 @@
 
 > Status: ACTIVE
 > Tranche: v1
-> Version: v1
+> Version: v10
 > Last updated: 2026-08-13
 > PRD: docs/prd.md (built against v5)
-> Architecture: docs/architecture.md (built against v5)
+> Architecture: docs/architecture.md (built against v7)
 
 ## Phases & Milestones
 
@@ -13,7 +13,7 @@
 |-------|------|--------|
 | Phase 0 | Project scaffolding (Angular app, ASP.NET Core API, SQL Server/EF Core setup) | Done |
 | Phase 1 | Domain & data layer (entity schema, EF Core migrations) | Done |
-| Phase 2 | Workflow Definition Service & API (CRUD + versioning) | Planned |
+| Phase 2 | Workflow Definition Service & API (CRUD + versioning) | Done |
 | Phase 3 | Task Handler abstraction (interfaces + mock handlers) | Planned |
 | Phase 4 | Workflow Runtime Engine (instance lifecycle, node evaluation) | Planned |
 | Phase 5 | Angular frontend (persona selection, designer, runtime viewer, dashboard) | Planned |
@@ -25,7 +25,7 @@
 | ID | Feature | Phase | Priority | Status | Acceptance Criteria |
 |----|---------|-------|----------|--------|---------------------|
 | F-001 | Domain/data schema + EF Core migrations against SQL Server 2022 | 1 | Must | Done | All entities from Architecture §4 (WorkflowDefinition, Node, Connection, WorkflowInstance, NodeExecution, TaskHandlerReference) exist as EF Core-mapped tables; migrations apply cleanly to a fresh SQL Server 2022 instance — verified against `(localdb)\MSSQLLocalDB` (a full SQL Server 2022 engine is not installed on this machine; LocalDB used for local dev, consistent with F-015/PM-001) |
-| F-002 | Workflow Definition CRUD + versioning API/service | 2 | Must | Planned | Satisfies FR-002; definitions can be created, retrieved, updated, and versioned independently of any running instance |
+| F-002 | Workflow Definition CRUD + versioning API/service | 2 | Must | Done | Satisfies FR-002; definitions can be created, retrieved, updated, and versioned independently of any running instance |
 | F-003 | Task Handler abstraction (`ITaskHandler` / `ITaskCompletionCallback`) + mock handlers | 3 | Must | Planned | Satisfies FR-005 and ADR-004; at least SendEmail, CreateInvoice, ValidateRecord, and a HumanApproval-style stub implement the interface |
 | F-004 | Workflow Runtime Engine (instance lifecycle, node evaluation, task invocation) | 4 | Must | Planned | Satisfies FR-004 and Architecture §5 Data Flow; instance moves through the Workflow Instance Lifecycle (§4) and node-level states (§5) correctly for Condition, Switch, Loop, Parallel Split/Merge, Wait/Pause, and Manual Approval nodes |
 | F-005 | Persona-selection entry screen (Workflow Designer selectable; Process Owner/Operations Analyst greyed out) | 5 | Must | Planned | Satisfies FR-001 |
@@ -88,3 +88,6 @@
 | v6 | 2026-08-13 | Added automatic EF Core migration-on-startup (`Database.Migrate()` in `Program.cs`) so `dotnet run`/`make up-backend` creates the database and applies migrations with no manual step; verified for real by dropping and recreating `WorkflowPlatformDb` against LocalDB; updated F-015 acceptance criteria and test runbook | Post-Phase-0 enhancement |
 | v7 | 2026-08-13 | Marked F-001 Done (EF Core entity schema + `InitialSchema` migration, verified against LocalDB) and Phase 1 Done | Orchestrator Feature Loop — F-001 Reviewer PASS |
 | v8 | 2026-08-13 | Integration verification confirmed for F-001: all entities (WorkflowDefinition, Node, Connection, WorkflowInstance, NodeExecution, TaskHandlerReference) exist as `DbSet<T>`-mapped tables, migration re-verified against LocalDB, no code fixes required. A documentation-only correction (Architecture §4 field descriptions, navigation-collection shape) was applied directly to `docs/architecture.md` (its own v6) and is not duplicated here. Phase 2 (Workflow Definition Service & API) confirmed as the next Planned phase; no Open Items are affected by this work; not a Tranche boundary — Phases 2–7 remain Planned | Finalizer PMBook Update — F-001 Integration PASS |
+| v9 | 2026-08-13 | Amended F-001 (already Done) per an approved human design decision surfaced by Integration's own prior E2E validation of F-002: `Node`'s primary key widened from `nodeId` alone to the composite (`nodeId`, `workflowDefinitionId`), so a client can reuse a node's logical identity across versions without colliding with the immutable prior version's row (NFR-005 unaffected — no version's rows are ever mutated). Every FK referencing `Node` was widened to match (`Connection.sourceNodeId`/`targetNodeId`, `NodeExecution.nodeId` (+ new `workflowDefinitionId` column), `TaskHandlerReference.nodeId` (+ new `workflowDefinitionId` column), and the `WorkflowInstance.currentNodes` join table). New migration `CompositeNodeKey` generated and re-verified against a dropped/recreated LocalDB. `WorkflowDefinitionServiceTests.cs` gained a test for the now-fixed case (v2 reusing a v1 node ID succeeds as a distinct row); no existing test was weakened, two tests' fixtures were adjusted to set the now-required `workflowDefinitionId` on `TaskHandlerReference`/`NodeExecution`. **F-002 Done-status-vs-defect concern (raised in Integration's prior pass) is now resolved**: the defect was in F-001's schema, not F-002's service logic — F-002's acceptance criteria ("definitions can be created, retrieved, updated, and versioned independently of any running instance") is satisfied and TC-001 was re-verified live end-to-end against the running API including the previously-failing reused-node-ID case. Both F-001 and F-002 remain correctly marked Done; Architecture §4 updated to match (its own v7) | Integration Agent — Node composite-key schema correction, loop_count 1 |
+| v10 | 2026-08-13 | Consistency fix only, no scope change: header `Version` field had drifted from the Version History table since v1 (never bumped by prior passes) — corrected `v1` → `v10`; `Architecture: ... (built against v5)` citation corrected to `v7` to match Architecture's current version (which now documents the composite-key schema from this doc's own v9). Verified F-002 Done, Phase 2 Done, and v9's F-001 amendment are complete and not duplicated; PM-001 remains the only Open Item and is already Resolved; no new Open Items surfaced. Tranche-boundary check: Phases 3–7 remain Planned, so Phase 2 completion is **not** a Tranche boundary | Finalizer PMBook Update — F-002 Integration PASS |
+
